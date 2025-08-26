@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0f0f1a;
+    color: white;
+    overflow-x: hidden;
+}
+
+header.hero {
+    background: linear-gradient(120deg, #6a11cb, #2575fc);
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+.btn-nav {
+    background: yellow;
+    color: black !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hero-content {
+    padding: 0 20px;
+    margin-top: 10%;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+}
+
+.hero-content p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.btn-glow {
+    display: inline-block;
+    padding: 12px 24px;
+    background: yellow;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px orange, 0 0 40px orange;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #12121f;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+footer {
+    padding: 30px 20px;
+    background: #0a0a15;
+    text-align: center;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in.delay-1 { animation-delay: 0.5s; }
+.fade-in.delay-2 { animation-delay: 1s; }
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
